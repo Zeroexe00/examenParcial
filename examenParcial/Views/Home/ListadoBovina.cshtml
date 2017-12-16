@@ -1,0 +1,40 @@
+﻿
+@model  IEnumerable<examenParcial.Models.Vaca>
+
+
+<h2>ListadoBovina</h2>
+
+<table class="table table-bordered table-hover">
+    
+    <thead>
+    <th>DIIO</th>
+    <th>Nombre</th>
+    <th>Sexo</th>
+    <th>edad</th>
+    <th>raza</th>
+    <th>tipo de animal</th>
+    <th>Rebaño</th>
+    <th>Ver</th>
+    </thead>
+   
+
+    <tbody>
+        @foreach (examenParcial.Models.Vaca p in Model)
+        {
+
+            <tr>
+                <td>@Html.DisplayFor(m => p.diio)</td>
+                <td>@Html.DisplayFor(m => p.nombre)</td>
+                <td>@Html.DisplayFor(m => p.sexo)</td>
+                <td>@Html.DisplayFor(m => p.edad)</td>
+                <td>@Html.DisplayFor(m => p.raza)</td>
+                <td>@Html.DisplayFor(m => p.tipo)</td>
+                <td>@Html.DisplayFor(m => p.rebaño)</td>
+                
+                <td>@Html.ActionLink("Visualizar", "Ver", new { diio = p.diio })</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
